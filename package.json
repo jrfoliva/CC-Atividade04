@@ -1,0 +1,27 @@
+{
+  "name": "cc-atividade04",
+  "version": "1.0.0",
+  "description": "Atividade do módulo 4 de Clouding Computing utilizando as ferramentas: NodeJS+Git+Docker.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrfoliva/CC-Atividade04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrfoliva/CC-Atividade04/issues"
+  },
+  "homepage": "https://github.com/jrfoliva/CC-Atividade04#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0"
+  }
+}
