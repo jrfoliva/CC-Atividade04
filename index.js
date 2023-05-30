@@ -37,15 +37,13 @@ server.get("/readiness", checaBancoPronto, (req, res) => {
 // Middleware para checar se banco de dados está pronto.
 function checaBancoPronto(req, res, next){
     const aluno = new Aluno();
-    const estadobd = aluno.createDataBase(); //Se banco pronto retorna true
-    if (estadobd){ 
+    aluno.createDataBase().then(()=> {
         return next();
-    }
-    else {
+    }).catch((erro) => {
         return res.json({
-            message: "Preparando o banco de dados. Tente novamente!"
+            message: "Preparando o banco de dados. Tente novamente! - erro: "+ erro
         });
-    }
+    });
 }
 
 // Consulta por Route params também será possível.
@@ -55,10 +53,6 @@ server.get("/consulta-dados/:id?",  checaBancoPronto, (req, res) => {
 
     aluno.consulta(aluno).then((listaAlunos) => {
         return res.status(200).json(listaAlunos);
-    }).catch((erro) => {
-        res.status(201).json({
-            message: "Banco sendo preparado. Tente novamente!"
-        })
     });
 });
 

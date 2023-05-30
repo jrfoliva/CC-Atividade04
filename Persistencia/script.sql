@@ -4,7 +4,7 @@ create database if not exists db_ativ04;
 use db_ativ04;
 
 create table if not exists alunos  (
-	id int not null auto_increment,
+    id int not null auto_increment,
     nome varchar(30) not null,
     ra varchar(11) not null unique,
     curso varchar(50) not null,

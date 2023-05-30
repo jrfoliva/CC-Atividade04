@@ -1,8 +1,6 @@
-FROM mysql:8.0-debian
+FROM node:18-slim
 ENV NODE_ENV development
 USER root
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y nodejs npm
 RUN apt-get update && apt-get upgrade -y
 RUN mkdir -p /usr/src/app/node_modules
 RUN mkdir -p /usr/src/app/tmp
