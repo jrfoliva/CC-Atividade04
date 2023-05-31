@@ -6,6 +6,7 @@ Havia comentado via mensagem em instalar o node junto da imagem mysql:debian, ma
 
 # Endereços dos repositórios
 https://github.com/jrfoliva/CC-Atividade04.git
+https://hub.docker.com/repository/docker/jrfoliva/atividade04/general
 
 # Executando os comandos 
 git add .
@@ -14,9 +15,12 @@ git push origin main
 
 # Fases da atividade:
 - implementação da API - Ok;
-- build imagem utilizando a imagem node:lts no docker - Ok;
-- run da imagem do mysql:8.0.33  - !OK; // Mas está dando recusando a conexão. Localmente normal.
+-- implementação da camada modelo e persistência sendo chamada do arquivo index.js Utilizado middleware para
+   se assegurar da criação da base de dados, tabela e inserts de 3 registros, sendo ativado pela rota /readiness; 
+- build imagem utilizando a imagem node:18-slim no docker - Ok;
+- run da imagem do mysql:8.0.33-debian - !OK; // Mas está recusando a conexão. No meu banco local ok.
  
+# Comandos utilizados.
 # Comando utilizado para fazer o build da aplicação, referindo se do node:18-slim
 docker build --no-cache -t atividade04:v11 .
 
@@ -35,5 +39,7 @@ docker tag atividade04:v11 jrfoliva/atividade04:v11
 # Push da imagem
 docker push jrfoliva/atividade04:v11
 
-# Para baixar a imagem do repositório
+# Baixar a imagem do repositório
 docker pull jrfoliva/atividade04:v11
+
+# Fim - Muito Obrigado!
