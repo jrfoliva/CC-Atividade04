@@ -8,10 +8,11 @@ async function Conexao() {
     const connection = await mysql2.createConnection({
         host: "localhost",
         user: "root",
-        password: "masterkey",
-        database: "db_ativ04"
+        password: "masterkey"
+        //database: "db_ativ04"
     });
 
+    
     global.connection = connection;
     console.info("MySQL Connected!");
     return connection;
