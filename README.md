@@ -22,7 +22,7 @@ git push origin main
  
 # Comandos utilizados.
 # Comando utilizado para fazer o build da aplicação, referindo se do node:18-slim
-docker build --no-cache -t atividade04:v11 .
+docker build --no-cache -t atividade04:v12 .
 
 # Baixa da imagem mysql:8.0.33-debian
 docker pull mysql:8.0.33-debian 
@@ -31,15 +31,15 @@ docker pull mysql:8.0.33-debian
 docker run -p 3306:3306 -e MYSQL_ROOT_PASSWORD=masterkey -e MYSQL_USER=junior -e MYSQL_PASSWORD=atividade04 -d mysql:8.0.33-debian
 
 # Comando utilizado para rodar a imagem da Aplicação
-docker run -dp 3000:3000 atividade04:v11
+docker run -dp 3000:3000 atividade04:v12
 
 # Criando uma tag para realizar o push para o repositório
-docker tag atividade04:v11 jrfoliva/atividade04:v11
+docker tag atividade04:v12 jrfoliva/atividade04:v12
 
 # Push da imagem
-docker push jrfoliva/atividade04:v11
+docker push jrfoliva/atividade04:v12
 
 # Baixar a imagem do repositório
-docker pull jrfoliva/atividade04:v11
+docker pull jrfoliva/atividade04:v12
 
 # Fim - Muito Obrigado!

@@ -6,9 +6,10 @@ async function Conexao() {
     }
 
     const connection = await mysql2.createConnection({
-        host: "localhost",
+        host: "db_mysql",
         user: "root",
-        password: "masterkey"
+        password: "masterkey",
+        port: 3306,
         //database: "db_ativ04"
     });
 

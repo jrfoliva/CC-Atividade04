@@ -1,0 +1,32 @@
+version: '3.9'
+services:  
+  db_mysql:
+    image: mysql:8.0.33-debian
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "masterkey"
+      MYSQL_USER: junior
+      MYSQL_PASSWORD: "ra10482110183"
+      MYSQL_DATABASE: db_ativ04
+    ports:
+      - 3306:3306
+    volumes:
+      - ./Persistencia:/docker-entrypoint-initdb.d
+    networks:
+      - mynetwork
+
+  nodejs:
+    image: jrfoliva/ativfinal:v2.0
+    container_name: nodejs
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - mynetwork
+    depends_on:
+      - db_mysql
+
+networks:
+  mynetwork:
+    driver: bridge
